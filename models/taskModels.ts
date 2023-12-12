@@ -1,12 +1,17 @@
 export interface Task {
   id: number
-  title: string
+  taskDetails: string
   priority: boolean
   completed: boolean
 }
 
 export interface NewTask {
-  title: string
+  taskDetails: string
   priority: boolean
   completed: boolean
+}
+
+export interface doneTask {
+  done: boolean
+  id: number
 }

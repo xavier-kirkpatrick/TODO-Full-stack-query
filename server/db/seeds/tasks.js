@@ -6,27 +6,27 @@ export async function seed(knex) {
       // Inserts seed entries
       return knex('myTasks').insert([
         {
-          'task details': 'Trim the hedge',
+          taskDetails: 'Trim the hedge',
           priority: false,
           completed: false,
         },
         {
-          'task details': 'Put the rubbish out',
+          taskDetails: 'Put the rubbish out',
           priority: true,
           completed: false,
         },
         {
-          'task details': 'Go for a run',
+          taskDetails: 'Go for a run',
           priority: true,
           completed: true,
         },
         {
-          'task details': 'Top up Hop Card',
+          taskDetails: 'Top up Hop Card',
           priority: true,
           completed: false,
         },
         {
-          'task details': 'Clean computer screen',
+          taskDetails: 'Clean computer screen',
           priority: false,
           completed: true,
         },
