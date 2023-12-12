@@ -1,7 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { getAllTasks, taskDelete, taskDone } from '../apis/clientApi'
 import { Task } from '../../models/taskModels'
-import ListAllTasks from './ListTasks'
 
 function GetTasks() {
   const { data, isLoading } = useQuery({
@@ -11,7 +10,6 @@ function GetTasks() {
       return response
     },
   })
-  console.log(data)
 
   const queryClient = useQueryClient()
   const mutation = useMutation({
@@ -44,7 +42,9 @@ function GetTasks() {
     task_id: number
   ) {
     e.preventDefault()
-    mutation.mutate({ done: e.target.checked, task_id })
+    const newValue = e.target.checked
+
+    mutation.mutate({ done: newValue, task_id })
   }
 
   function deleteTask(id: number) {

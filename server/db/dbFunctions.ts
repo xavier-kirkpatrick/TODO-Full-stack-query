@@ -1,12 +1,12 @@
 import connection from './connection'
-import { Task, NewTask, doneTask } from '../../models/taskModels'
+import { Task, doneTask } from '../../models/taskModels'
 
 export async function showTasks(db = connection): Promise<Task[]> {
   return db('myTasks').select()
 }
 
-export async function addTask(task: NewTask, db = connection) {
-  return db<Task>('myTasks').insert(task)
+export async function addTask(task: string, db = connection): Promise<Task> {
+  return db('myTasks').insert({ taskDetails: task })
 }
 
 export async function taskComplete(
